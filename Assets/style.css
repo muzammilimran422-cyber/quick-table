@@ -1,0 +1,155 @@
+ @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 30px 10px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 50px 40px;
+    border-radius: 30px;
+    max-width: 550px;
+    margin: 30px auto;
+    box-shadow:
+        0 0 50px rgba(138, 43, 226, 0.6),
+        0 0 100px rgba(0, 255, 255, 0.4),
+        inset 0 0 50px rgba(255, 255, 255, 0.1);
+    animation: glowPulse 4s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 50px rgba(138, 43, 226, 0.6), 0 0 100px rgba(0, 255, 255, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 80px rgba(138, 43, 226, 0.9), 0 0 150px rgba(0, 255, 255, 0.7);
+    }
+}
+
+h1 {
+    font-size: 4.5rem;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+    margin-bottom: 30px;
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+    }
+
+    100% {
+        text-shadow: 0 0 80px rgba(0, 255, 255, 1);
+    }
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    margin: 18px 0;
+    font-size: 22px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ffff, inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+input::placeholder {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+button {
+    padding: 20px 70px;
+    font-size: 26px;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+    transition: all 0.5s;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.8s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 0 80px rgba(255, 0, 255, 1);
+}
+
+#result {
+    margin-top: 50px;
+    font-size: 28px;
+    line-height: 2.4;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    min-height: 100px;
+}
+
+#result h2 {
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
